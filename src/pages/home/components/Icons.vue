@@ -86,19 +86,17 @@ export default {
 
 <style lang="stylus" scoped>
   .content >>> .swiper-container
-    height: 0
-    padding-bottom: 50%
   .content >>> .swiper-pagination-bullets
     padding-bottom: 0
   .content
+    padding .2rem 0 .2rem 0
     margin-top: 0.15rem
+    background #fff
   .icon
     position: relative
     overflow: hidden
     float: left
     width: 25%
-    height: 0
-    padding-bottom: 25%
     margin-top: -0.15rem
     text-align: center
     .icon-img
