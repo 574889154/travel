@@ -65,6 +65,10 @@ export default {
         id: '0009',
         iconUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/b4511345827006994aa1980a3886f0ac.png',
         desc: '北京世园会'
+      }, {
+        id: '0010',
+        iconUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20197/bf88c62458044ca2ef9d733690eef3fc.png',
+        desc: '优惠券'
       }]
     }
   },
@@ -85,7 +89,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-  .content >>> .swiper-container
+  .content >>> .swiper-pagination
+    position unset
   .content >>> .swiper-pagination-bullets
     padding-bottom: 0
   .content
@@ -111,5 +116,5 @@ export default {
         height: 1.1rem
     .icon-desc
       color: #333333
-      white-space: no
+      white-space: nowrap
 </style>

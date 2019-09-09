@@ -20,17 +20,18 @@ export default {
 <style lang="stylus" scoped>
   .mp-list-item
     overflow hidden
-    border 0.01rem solid #ddd
+    border-top 0.01rem solid #FAFAFA
+    border-bottom .2rem solid #F5F5F5
   .mp-list-item > li
     display inline
     float left
     color #333
-    font-size .32rem
+    font-size .28rem
     width 50%
     height .98rem
     box-sizing border-box
     text-align center
     line-height .98rem
   .mp-local
-    border-right 0.01rem solid #ddd
+    border-right 0.01rem solid #FAFAFA
 </style>
