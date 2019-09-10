@@ -1,11 +1,11 @@
 <template>
     <ul class="mp-list-item">
       <li class="mp-local">
-        <span class="iconfont">&#xe61b;</span>
+        <span class="iconfont">&#xe639;</span>
         定位
       </li>
       <li class="must-see">
-        <span class="iconfont">&#xe77a;</span>
+        <span class="iconfont">&#xe662;</span>
         必游榜单
       </li>
     </ul>

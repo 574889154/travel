@@ -7,6 +7,7 @@
     <home-recommend></home-recommend>
     <home-guesslike></home-guesslike>
     <home-weekendgo></home-weekendgo>
+    <home-footer></home-footer>
   </div>
 </template>
 <script>
@@ -17,6 +18,7 @@ import HomeMplist from './components/Mplist'
 import HomeRecommend from './components/Recommend'
 import HomeGuesslike from './components/Guesslike'
 import HomeWeekendgo from './components/Weekendgo'
+import HomeFooter from './components/Footer'
 export default {
   name: 'Home',
   components: {
@@ -26,7 +28,8 @@ export default {
     HomeMplist,
     HomeRecommend,
     HomeGuesslike,
-    HomeWeekendgo
+    HomeWeekendgo,
+    HomeFooter
   }
 }
 </script>
