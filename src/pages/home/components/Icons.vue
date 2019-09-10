@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: 'Icons',
+  name: 'HomeIcons',
   data () {
     return {
       swiperOption: {

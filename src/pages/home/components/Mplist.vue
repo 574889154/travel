@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'Mplist'
+  name: 'HomeMplist'
 }
 </script>
 

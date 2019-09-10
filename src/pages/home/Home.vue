@@ -5,6 +5,7 @@
     <home-icons></home-icons>
     <home-mplist></home-mplist>
     <home-recommend></home-recommend>
+    <home-guesslike></home-guesslike>
   </div>
 </template>
 <script>
@@ -13,6 +14,7 @@ import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
 import HomeMplist from './components/Mplist'
 import HomeRecommend from './components/Recommend'
+import HomeGuesslike from './components/Guesslike'
 export default {
   name: 'Home',
   components: {
@@ -20,7 +22,8 @@ export default {
     HomeSwiper,
     HomeIcons,
     HomeMplist,
-    HomeRecommend
+    HomeRecommend,
+    HomeGuesslike
   }
 }
 </script>

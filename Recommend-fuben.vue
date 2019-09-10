@@ -9,23 +9,9 @@
       <ul class="recommend-flexbox" ref="cont">
         <li
           class="item-img-wrapper"
-          v-for="(item,index) in recommendList"
+          v-for="item in recommendList"
           :key="item.id"
         >
-          <div class="mp-hotsale-tag">
-            <img v-if="index === 0"
-              class="mp-hotsale-tagimg"
-              src="http://img1.qunarzz.com/piao/fusion/1710/ab/159673b63e6ca702.png"
-            >
-            <img v-if="index === 1"
-              class="mp-hotsale-tagimg"
-              src="http://img1.qunarzz.com/piao/fusion/1710/2d/36d0c4adaebbbc02.png"
-            >
-            <img v-if="index === 2"
-              class="mp-hotsale-tagimg"
-              src="http://img1.qunarzz.com/piao/fusion/1710/67/edc47ffef9e96b02.png"
-            >
-          </div>
           <img class="recommend-img" :src="item.itemUrl" alt="">
           <p class="recommend-desc">{{item.desc}}</p>
           <p><span class="recommend-money">￥{{item.money}}</span>起</p>
@@ -36,6 +22,12 @@
 </template>
 
 <script>
+import BScroll from 'better-scroll'
+// eslint-disable-next-line no-unused-vars
+const scroll = new BScroll('.wrapper', {
+  scrollY: true,
+  click: true
+})
 export default {
   name: 'HomeRecommend',
   data () {
@@ -70,13 +62,37 @@ export default {
         itemUrl: 'http://img1.qunarzz.com/sight/p0/201308/08/41150dacc0e3a0c8c8d65eac.jpg_250x250_d76e727c.jpg',
         desc: '北京动物园',
         money: '25'
-      }, {
-        id: '0007',
-        itemUrl: 'http://img1.qunarzz.com/sight/p0/1602/92/920e47352552c1c990.water.jpg_250x250_ee99c18e.jpg',
-        desc: '天坛公园',
-        money: '27'
       }]
     }
+  },
+  methods: {
+    verScroll () {
+      let width = this.recommendList.length * 110// 动态计算出滚动区域的大小，前面已经说过了，产生滚动的原因是滚动区域宽度大于父盒子宽度
+      this.$refs.cont.style.width = width + 'px' // 修改滚动区域的宽度
+      this.$nextTick(() => {
+        if (!this.scroll) {
+          this.scroll = new BScroll(this.$refs.wrapper, {
+            startX: 0, // 配置的详细信息请参考better-scroll的官方文档，这里不再赘述
+            click: true,
+            scrollX: true,
+            scrollY: false,
+            eventPassthrough: 'vertical'
+          })
+        } else {
+          this.scroll.refresh() // 如果dom结构发生改变调用该方法
+        }
+      })
+    }
+  },
+  mounted () {
+    this.$nextTick(() => {
+      let timer = setTimeout(() => {
+        if (timer) {
+          clearTimeout(timer)
+          this.verScroll()
+        }
+      }, 0)
+    })
   }
 }
 </script>
@@ -92,8 +108,7 @@ export default {
     .title
       position: relative
       display: flex
-      margin-left: .1rem
-      padding: .24rem 0
+      padding: 12px 0
       box-sizing: border-box
       .title-img
         width .3rem
@@ -113,30 +128,18 @@ export default {
       right .2rem
     .recommend-flexbox
       display flex
-      height 3rem
-      margin .12rem
-      overflow-x scroll
+      margin-left .12rem
       .item-img-wrapper
-        position relative
         width 100%
         margin-left .12rem
         white-space no
         line-height .32rem
         text-align center
-        .mp-hotsale-tag
-          position absolute
-          top 0
-          left 0
-          z-index 1
-          width .84rem
-          height .4rem
-          overflow hidden
-          .mp-hotsale-tagimg
-            width 100%
         .recommend-img
           width 2rem
           height 2rem
           margin-bottom .12rem
         .recommend-money
           color #FF8E16
+
 </style>
