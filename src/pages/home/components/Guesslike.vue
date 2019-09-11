@@ -13,6 +13,15 @@
         <div class="guess-imgcon">
           <img class="guess-like-img" :src="item.guessImg">
         </div>
+          <div v-if="item.type === 1" class="guess-like-tag" style="background-image:url(https://img1.qunarzz.com/piao/fusion/1802/20/2ba6d10b17972e02.png)">
+            随买随用
+          </div>
+          <div v-if="item.type === 2" class="guess-like-tag" style="background-image:url(https://img1.qunarzz.com/piao/fusion/1802/20/2ba6d10b17972e02.png)">
+            可定今日
+          </div>
+          <div v-if="item.type === 3" class="guess-like-tag" style="background-image:url(https://img1.qunarzz.com/piao/fusion/1802/52/b9080e45b69b4f02.png)">
+            可定明日
+          </div>
         <div class="guess-info">
           <div class="guess-like-title">{{item.guessTitle}}</div>
           <div class="guess-like-comment">
@@ -53,7 +62,8 @@ export default {
         commentNum: '463',
         guessPrice: '121.9',
         likeAddress: '海淀区',
-        likeDesc: '08北京奥运匹克塔'
+        likeDesc: '08北京奥运匹克塔',
+        type: 1
       }, {
         id: '0002',
         guessImg: 'http://img1.qunarzz.com/sight/p0/1602/68/68aa05adb5315f9990.water.jpg_200x200_ce3d2658.jpg',
@@ -61,7 +71,8 @@ export default {
         commentNum: '7631',
         guessPrice: '175',
         likeAddress: '西城区',
-        likeDesc: '奇幻海洋之旅，在帝都感受大海的魅力'
+        likeDesc: '奇幻海洋之旅，在帝都感受大海的魅力',
+        type: 2
       }, {
         id: '0003',
         guessImg: 'http://img1.qunarzz.com/sight/p0/1609/7a/7ae8ee7831836095a3.water.jpg_200x200_36727f69.jpg',
@@ -69,7 +80,8 @@ export default {
         commentNum: '11233',
         guessPrice: '31.9',
         likeAddress: '昌平区',
-        likeDesc: ''
+        likeDesc: '',
+        type: 3
       }, {
         id: '0004',
         guessImg: 'http://img1.qunarzz.com/sight/p0/1608/4f/4fc3f5a1b838f279a3.water.jpg_200x200_e6528ef6.jpg',
@@ -77,7 +89,8 @@ export default {
         commentNum: '9446',
         guessPrice: '144.5',
         likeAddress: '前门大街',
-        likeDesc: '听说能遇到结论哟'
+        likeDesc: '听说能遇到结论哟',
+        type: 1
       }, {
         id: '0005',
         guessImg: 'http://img1.qunarzz.com/sight/p0/1603/85/85c883189bf7293390.water.jpg_200x200_3165123d.jpg',
@@ -85,7 +98,8 @@ export default {
         commentNum: '4195',
         guessPrice: '10',
         likeAddress: '西城区',
-        likeDesc: ''
+        likeDesc: '',
+        type: 1
       }]
     }
   }
@@ -122,9 +136,20 @@ export default {
         .guess-imgcon
           width 2rem
           height 2rem
-          .guess-like-img
-            width 2rem
-            height 2rem
+        .guess-like-tag
+          position absolute
+          top .2rem
+          left 0
+          width 1.02rem
+          height .38rem
+          background-size 100%
+          color #ffffff
+          font-size .2rem
+          line-height .38rem
+          text-indent .04rem
+        .guess-like-img
+          width 2rem
+          height 2rem
         .guess-info
           width 100%
           overflow hidden
