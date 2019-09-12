@@ -19,6 +19,8 @@ import HomeRecommend from './components/Recommend'
 import HomeGuesslike from './components/Guesslike'
 import HomeWeekendgo from './components/Weekendgo'
 import HomeFooter from './components/Footer'
+
+import axios from 'axios'
 export default {
   name: 'Home',
   components: {
@@ -30,6 +32,18 @@ export default {
     HomeGuesslike,
     HomeWeekendgo,
     HomeFooter
+  },
+  methods: {
+    getHomeInfo () {
+      axios.get('api/index.js')
+        .then(this.getHomeInfoSucc)
+    },
+    getHomeInfoSucc (res) {
+      console.log(res)
+    }
+  },
+  mounted () {
+    this.getHomeInfo()
   }
 }
 </script>
