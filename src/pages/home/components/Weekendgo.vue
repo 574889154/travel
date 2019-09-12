@@ -6,7 +6,7 @@
       <div class="weekend-list">
         <div>
           <div class="mp-product-item"
-               v-for="item in productList"
+               v-for="item in list"
                 :key="item.id"
           >
             <div class="product-img">
@@ -32,35 +32,8 @@
 <script>
 export default {
   name: 'HomeWeekendgo',
-  data () {
-    return {
-      productList: [{
-        id: '0001',
-        proUrl: 'http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
-        proName: '京城周末撒欢',
-        proDesc: '在帝都过周末，不仅仅是城中游！'
-      }, {
-        id: '0002',
-        proUrl: 'http://img1.qunarzz.com/sight/source/1811/7e/476589267ebb41.jpg_r_640x214_bf599709.jpg',
-        proName: '京城溜娃必去',
-        proDesc: '德智体美劳全面发展的亲子日，这些地方该去看看…'
-      }, {
-        id: '0003',
-        proUrl: 'http://img1.qunarzz.com/sight/source/1505/aa/7baaf8a851d221.jpg_r_640x214_1431200f.jpg',
-        proName: '帝都必打卡',
-        proDesc: '来北京必去的景点非这些地方莫属'
-      }, {
-        id: '0004',
-        proUrl: 'http://img1.qunarzz.com/sight/source/1606/85/c6b6bad1b977e.jpg_r_640x214_5c638941.jpg',
-        proName: '漂流勇进，烧烤露营',
-        proDesc: '轻松水上漂，任我乐逍遥'
-      }, {
-        id: '0005',
-        proUrl: 'http://img1.qunarzz.com/sight/source/1505/53/02091f1ee43d0a.jpg_r_640x214_2e3256b1.jpg',
-        proName: '北京清凉避暑胜地',
-        proDesc: '到大自然中享受“天然空调”的清凉'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>

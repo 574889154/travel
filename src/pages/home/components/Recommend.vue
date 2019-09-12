@@ -9,7 +9,7 @@
       <ul class="recommend-flexbox" ref="cont">
         <li
           class="item-img-wrapper"
-          v-for="(item,index) in recommendList"
+          v-for="(item,index) in list"
           :key="item.id"
         >
           <div class="mp-hotsale-tag">
@@ -38,45 +38,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        itemUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_250x250_0fc722c0.jpg',
-        desc: '故宫',
-        money: '60'
-      }, {
-        id: '0002',
-        itemUrl: 'http://img1.qunarzz.com/sight/p0/1902/84/84696f368bbec10da3.img.jpg_250x250_3588bc9a.jpg',
-        desc: '北京世园会',
-        money: '108'
-      }, {
-        id: '0003',
-        itemUrl: 'http://img1.qunarzz.com/sight/p0/201405/12/51b63883c25f5d87af3c08bb016e2bd7.jpg_250x250_6ec2f798.jpg',
-        desc: '恭王府',
-        money: '40'
-      }, {
-        id: '0004',
-        itemUrl: 'http://img1.qunarzz.com/sight/p0/1604/78/78873494f26e554090.water.jpg_250x250_0565d534.jpg',
-        desc: '京东石林峡',
-        money: '58'
-      }, {
-        id: '0005',
-        itemUrl: 'http://img1.qunarzz.com/sight/p0/1505/f5/f5f45e1a83537bcb.water.jpg_250x250_63e3520a.jpg',
-        desc: '圆明园',
-        money: '25'
-      }, {
-        id: '0006',
-        itemUrl: 'http://img1.qunarzz.com/sight/p0/201308/08/41150dacc0e3a0c8c8d65eac.jpg_250x250_d76e727c.jpg',
-        desc: '北京动物园',
-        money: '25'
-      }, {
-        id: '0007',
-        itemUrl: 'http://img1.qunarzz.com/sight/p0/1602/92/920e47352552c1c990.water.jpg_250x250_ee99c18e.jpg',
-        desc: '天坛公园',
-        money: '27'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
