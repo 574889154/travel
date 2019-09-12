@@ -57,7 +57,9 @@
         </ul>
       </div>
       <ul class="footer_nav">
-        <li class="nav_flight">登录</li>
+        <li class="nav_flight">
+          <router-link to="/login">登录</router-link>
+        </li>
         <li class="nav_flight">我的订单</li>
         <li class="nav_flight" style="display: none">个人中心</li>
         <li class="nav_flight">最近浏览</li>

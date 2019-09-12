@@ -3,7 +3,11 @@
     <div class="log_main">
       <div class="log_header">
         <div class="header-left">
-          <div class="iconfont back-icon">&#xe624;</div>
+          <router-link to="/">
+            <div class="iconfont back-icon">
+            〈
+            </div>
+          </router-link>
         </div>
         <div class="header-middle">登录</div>
         <div class="header-right">注册</div>
@@ -103,6 +107,8 @@ export default {
       .header-left
         width 15%
         padding-left .2rem
+        .iconfont
+          color #fff
       .header-middle
         width 70%
         text-align center

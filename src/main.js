@@ -2,6 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 import router from './router'
 import fastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
@@ -13,7 +15,7 @@ import 'swiper/dist/css/swiper.css'
 Vue.config.productionTip = false
 // fastClick解决移动端300ms点击延迟问题
 fastClick.attach(document.body)
-Vue.use(VueAwesomeSwiper)
+Vue.use(VueAwesomeSwiper, axios, VueAxios)
 
 /* eslint-disable no-new */
 new Vue({
