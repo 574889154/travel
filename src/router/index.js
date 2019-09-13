@@ -14,6 +14,10 @@ export default new Router({
       name: 'Login',
       component: () => import('@/pages/login/Login')
     }, {
+      path: '/city',
+      name: 'City',
+      component: () => import('@/pages/city/City')
+    }, {
       path: '/',
       redirect: {name: 'Home'}
     }
