@@ -50,14 +50,17 @@ export default {
   },
   mounted () {
     this.scroll = new BScroll(this.$refs.wrapper)
-    this.scroll.refresh()
+  },
+  updated () {
+    if (this.scroll) {
+      this.scroll.refresh()
+    }
   },
   watch: {
     letter () {
       if (this.letter) {
         const element = this.$refs[this.letter][0]
         this.scroll.scrollToElement(element)
-        this.scroll.refresh()
       }
     }
   }
