@@ -1,37 +1,60 @@
 <template>
     <ul class="list">
-      <li class="item">A</li>
-      <li class="item">B</li>
-      <li class="item">C</li>
-      <li class="item">D</li>
-      <li class="item">E</li>
-      <li class="item">F</li>
-      <li class="item">G</li>
-      <li class="item">H</li>
-      <li class="item">I</li>
-      <li class="item">J</li>
-      <li class="item">K</li>
-      <li class="item">L</li>
-      <li class="item">M</li>
-      <li class="item">N</li>
-      <li class="item">O</li>
-      <li class="item">P</li>
-      <li class="item">Q</li>
-      <li class="item">R</li>
-      <li class="item">S</li>
-      <li class="item">T</li>
-      <li class="item">U</li>
-      <li class="item">V</li>
-      <li class="item">W</li>
-      <li class="item">X</li>
-      <li class="item">Y</li>
-      <li class="item">Z</li>
+      <li class="item"
+          v-for="item in letters"
+          :key="item"
+          :ref="item"
+          @touchstart="handleTouchStart"
+          @touchmove="handleTouchMove"
+          @touchend="handleTouchEnd"
+          @click="handleLetterClick"
+      >
+        {{item}}
+      </li>
     </ul>
 </template>
 
 <script>
 export default {
-  name: 'Alphabet'
+  name: 'Alphabet',
+  props: {
+    cities: Object
+  },
+  computed: {
+    letters () {
+      const letters = []
+      for (let i in this.cities) {
+        letters.push(i)
+      }
+      return letters
+    }
+  },
+  data () {
+    return {
+      touchStatus: false
+    }
+  },
+  methods: {
+    handleLetterClick (e) {
+      this.$emit('change', e.target.innerText)
+    },
+    handleTouchStart () {
+      this.touchStatus = true
+    },
+    handleTouchMove (e) {
+      if (this.touchStatus) {
+        const startY = this.$refs['A'][0].offsetTop
+        const touchY = e.touches[0].clientY - 79
+        const index = Math.floor((touchY - startY) / 20)
+        if (index >= 0 && index < this.letters.length) {
+          this.$emit('change',this.letters[index])
+        }
+      }
+    },
+    handleTouchEnd () {
+      this.touchStatus = false
+    }
+  }
 }
 </script>
 
