@@ -7,6 +7,7 @@ import VueAxios from 'vue-axios'
 import router from './router'
 import fastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import store from './store/index'
 import './assets/styles/reset.css'
 import './assets/styles/border.css'
 import './assets/styles/iconfont.css'
@@ -21,6 +22,7 @@ Vue.use(VueAwesomeSwiper, axios, VueAxios)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
