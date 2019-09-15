@@ -169,7 +169,7 @@ export default {
         .right-btn
           position absolute
           right 0
-          top 3.1rem
+          top 3.2rem
           padding .14rem .3rem
           margin-right .2rem
           border-radius .1rem
