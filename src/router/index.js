@@ -18,6 +18,10 @@ export default new Router({
       name: 'City',
       component: () => import('@/pages/city/City')
     }, {
+      path: '/detail/:id',
+      name: 'Detail',
+      component: () => import('@/pages/detail/Detail')
+    }, {
       path: '/',
       redirect: {name: 'Home'}
     }

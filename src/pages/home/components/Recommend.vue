@@ -7,10 +7,12 @@
     </div>
     <div class="wrapper" ref="wrapper">
       <ul class="recommend-flexbox" ref="cont">
-        <li
+        <router-link
+          tag="li"
           class="item-img-wrapper"
           v-for="(item,index) in list"
           :key="item.id"
+          to="/detail/0001"
         >
           <div class="mp-hotsale-tag">
             <img v-if="index === 0"
@@ -29,7 +31,7 @@
           <img class="recommend-img" :src="item.itemUrl" alt="">
           <p class="recommend-desc">{{item.desc}}</p>
           <p><span class="recommend-money">￥{{item.money}}</span>起</p>
-        </li>
+        </router-link>
       </ul>
     </div>
   </div>
