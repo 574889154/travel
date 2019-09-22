@@ -25,5 +25,8 @@ export default new Router({
       path: '/',
       redirect: {name: 'Home'}
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
