@@ -66,4 +66,10 @@ export default {
       .swiper-pagination
         width 100%
         color #fff
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
 </style>

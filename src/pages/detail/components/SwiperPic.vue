@@ -13,14 +13,21 @@
         </div>
         <div class="headfigure_shadow"></div>
       </div>
-      <gallary :imgs="imgs" v-if="visible" @gallaryClose="gallaryClose"></gallary>
+      <fade-animation>
+        <gallary :imgs="imgs" v-if="visible" @gallaryClose="gallaryClose"></gallary>
+      </fade-animation>
     </div>
 </template>
 
 <script>
 import Gallary from 'components/gallary/Gallary'
+import FadeAnimation from 'components/fade/fadeAnimation'
 export default {
   name: 'SwiperPic',
+  components: {
+    Gallary,
+    FadeAnimation
+  },
   data () {
     return {
       imgs: [
@@ -37,9 +44,6 @@ export default {
     gallaryClose () {
       this.visible = false
     }
-  },
-  components: {
-    Gallary
   }
 }
 </script>
