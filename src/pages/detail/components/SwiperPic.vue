@@ -2,10 +2,10 @@
     <div class="detail_con">
       <div class="detail_head">
         <div class="swiper_pic"  @click="gallaryVisible">
-          <img src="//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg" alt="">
+          <img :src="bannerImg" alt="">
         </div>
         <div class="headfeagure-info">
-          <div>故宫（AAAAA景区）</div>
+          <div>{{sightName}}</div>
         </div>
         <div class="imgswipeicon">
           <span class="imgswipeicon-icon iconfont">&#xe60d;</span>
@@ -14,7 +14,7 @@
         <div class="headfigure_shadow"></div>
       </div>
       <fade-animation>
-        <gallary :imgs="imgs" v-if="visible" @gallaryClose="gallaryClose"></gallary>
+        <gallary :imgs="gallaryImgs" v-if="visible" @gallaryClose="gallaryClose"></gallary>
       </fade-animation>
     </div>
 </template>
@@ -27,6 +27,12 @@ export default {
   components: {
     Gallary,
     FadeAnimation
+  },
+  props: {
+    sightName: String,
+    bannerImg: String,
+    gallaryImgs: Array,
+    list: Array
   },
   data () {
     return {
