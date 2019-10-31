@@ -22,6 +22,10 @@ export default new Router({
       name: 'Detail',
       component: () => import('@/pages/detail/Detail')
     }, {
+      path: '/topic',
+      name: 'Topic',
+      component: () => import('@/pages/topic/Topic')
+    }, {
       path: '/',
       redirect: {name: 'Home'}
     }

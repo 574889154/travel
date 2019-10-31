@@ -5,7 +5,7 @@
       定位
     </li>
     <li class="must-see">
-      <router-link to="./MustSee">
+      <router-link to="../../topic">
         <span class="iconfont">&#xe662;</span>
         必游榜单
       </router-link>
