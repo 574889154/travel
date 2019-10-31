@@ -8,6 +8,7 @@
     <home-guesslike></home-guesslike>
     <home-weekendgo :list="productList"></home-weekendgo>
     <home-footer></home-footer>
+    <Home-mustsee></Home-mustsee>
   </div>
 </template>
 <script>
@@ -19,6 +20,7 @@ import HomeRecommend from './components/Recommend'
 import HomeGuesslike from './components/Guesslike'
 import HomeWeekendgo from './components/Weekendgo'
 import HomeFooter from './components/Footer'
+import HomeMustSee from './components/MustSee'
 import axios from 'axios'
 import { mapState } from 'vuex'
 export default {
@@ -31,7 +33,8 @@ export default {
     HomeRecommend,
     HomeGuesslike,
     HomeWeekendgo,
-    HomeFooter
+    HomeFooter,
+    HomeMustSee
   },
   data () {
     return {
